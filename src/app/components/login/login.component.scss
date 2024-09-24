@@ -17,23 +17,47 @@ form {
         margin-bottom: 40px;
     }
 
-    input.email {
-        @include InputEmpty;
-    }
-    input.email:focus {
-        @include InputActive;
-    }
-    
-    input.password {
-        @include InputEmpty;
-        margin-bottom: 40px;
-    }
-    input.password:focus {
-        @include InputActive;
-        margin-bottom: 40px;
+    div.email-box{
+        position: relative;
+        
+        input.email {
+            @include InputEmpty;
+        }
+        input.email:focus {
+            @include InputActive;
+        }
 
+        div.error {
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            right: 16px;
+            @include BodyS;
+            color: $red;
+        }
     }
     
+    div.password-box {
+        position: relative;
+
+        input.password {
+            @include InputEmpty;
+            margin-bottom: 40px;
+        }
+        input.password:focus {
+            @include InputActive;
+            margin-bottom: 40px;
+        }
+
+        div.error {
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            right: 16px;
+            @include BodyS;
+            color: $red;
+        }
+    }
     
 
     button.login-btn {

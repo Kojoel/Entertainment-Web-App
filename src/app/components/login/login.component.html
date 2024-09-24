@@ -1,7 +1,17 @@
-<form>
+<form [formGroup]="loginForm">
     <span class="form-title">Login</span>
-    <input type="text" class="email" placeholder="Email">
-    <input type="text" class="password" placeholder="Password">
+    <div class="email-box">
+        <input type="text" class="email" placeholder="Email" formControlName="email">
+        <div class="error" *ngIf="loginForm.controls['email'].invalid && (loginForm.controls['email'].touched || loginForm.controls['email'].dirty)">
+            <span *ngIf="loginForm.controls['email'].errors?.['required']">Cant be empty</span>
+        </div>
+    </div>
+    <div class="password-box">
+        <input type="text" class="password" placeholder="Password" formControlName="password">
+        <div class="error" *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].touched || loginForm.controls['password'].dirty)">
+            <span *ngIf="loginForm.controls['password'].errors?.['required']">Cant be empty</span>
+        </div>
+    </div>
 
     <button class="login-btn">Login to your account</button>
     <span class="no-account-extention-point">Don't have an account? <a href="">Sign Up</a></span>
