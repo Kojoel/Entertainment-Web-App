@@ -1,0 +1,92 @@
+@import '../partials/variables';
+@import '../partials/functions';
+
+
+// Typography Mixins
+
+@mixin HeadingL() {
+    font-size: px-to-rem(32px);
+    color: $pure-white;
+    font-weight: 300;
+}
+
+@mixin HeadingM() {
+    font-size: px-to-rem(24px);
+    color: $pure-white;
+    font-weight: 300;
+}
+
+@mixin HeadingS() {
+    font-size: px-to-rem(24px);
+    color: $pure-white;
+    font-weight: 700;
+}
+
+@mixin HeadingXS() {
+    font-size: px-to-rem(18px);
+    color: $pure-white;
+    font-weight: 500;
+}
+
+@mixin BodyM () {
+    font-size: px-to-rem(15px);
+    color: $pure-white;
+    font-weight: 300;
+}
+
+@mixin BodyS () {
+    font-size: px-to-rem(13px);
+    color: $pure-white;
+    font-weight: 300;
+}
+
+
+// Interactive elements mixins
+// Buttons
+@mixin ButtonIdle() {
+    @include BodyM;
+    width: 336px;
+    height: 48px;
+    border-radius: 8px;
+    border: none;
+    background: $red;
+    color: $pure-white;
+}
+
+@mixin ButtonHover() {
+    @include BodyM;
+    width: 336px;
+    height: 48px;
+    border-radius: 8px;
+    border: none;
+    background: $pure-white;
+    color: $semi-dark-blue;
+}
+
+//Inputs-form
+@mixin InputEpmty() {
+    width: 336px;
+    height: 37px;
+    outline: none;
+    border-bottom: $border-empty;
+    padding: 0 16px;
+    caret-color: $red;
+}
+
+@mixin InputActive() {
+    width: 336px;
+    height: 37px;
+    outline: none;
+    border-bottom: $border-empty;
+    padding: 0 16px;
+    caret-color: $red;
+}
+
+@mixin InputError() {
+    width: 336px;
+    height: 37px;
+    outline: none;
+    border-bottom: $border-error;
+    padding: 0 16px;
+    caret-color: $red;
+}
