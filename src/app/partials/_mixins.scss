@@ -5,37 +5,37 @@
 // Typography Mixins
 
 @mixin HeadingL() {
-    font-size: px-to-rem(32px);
+    font-size: px-to-rem(32);
     color: $pure-white;
     font-weight: 300;
 }
 
 @mixin HeadingM() {
-    font-size: px-to-rem(24px);
+    font-size: px-to-rem(24);
     color: $pure-white;
     font-weight: 300;
 }
 
 @mixin HeadingS() {
-    font-size: px-to-rem(24px);
+    font-size: px-to-rem(24);
     color: $pure-white;
     font-weight: 700;
 }
 
 @mixin HeadingXS() {
-    font-size: px-to-rem(18px);
+    font-size: px-to-rem(18);
     color: $pure-white;
     font-weight: 500;
 }
 
 @mixin BodyM () {
-    font-size: px-to-rem(15px);
+    font-size: px-to-rem(15);
     color: $pure-white;
     font-weight: 300;
 }
 
 @mixin BodyS () {
-    font-size: px-to-rem(13px);
+    font-size: px-to-rem(13);
     color: $pure-white;
     font-weight: 300;
 }
@@ -51,6 +51,9 @@
     border: none;
     background: $red;
     color: $pure-white;
+    margin-bottom: 24px;
+    cursor: pointer;
+    transition: $btn-transition;
 }
 
 @mixin ButtonHover() {
@@ -61,32 +64,48 @@
     border: none;
     background: $pure-white;
     color: $semi-dark-blue;
+    cursor: pointer;
+    transition: $btn-transition;
 }
 
 //Inputs-form
-@mixin InputEpmty() {
+@mixin InputEmpty() {
+    @include BodyM;
     width: 336px;
     height: 37px;
     outline: none;
+    // outline-bottom: 1px solid transparent;
+    border: none;
     border-bottom: $border-empty;
-    padding: 0 16px;
+    padding: 5px 16px 32px 16px;
     caret-color: $red;
+    background: transparent;
+    margin-bottom: 24px;
+    transition: $input-transition;
+    
 }
 
 @mixin InputActive() {
     width: 336px;
     height: 37px;
     outline: none;
-    border-bottom: $border-empty;
-    padding: 0 16px;
+    border: none;
+    border-bottom: $border-active;
+    padding: 5px 16px 32px 16px;
     caret-color: $red;
+    background: transparent;
+    margin-bottom: 24px;
+    transition: $input-transition;
 }
 
 @mixin InputError() {
     width: 336px;
     height: 37px;
     outline: none;
+    border: none;
     border-bottom: $border-error;
-    padding: 0 16px;
+    padding: 5px 16px 32px 16px;
     caret-color: $red;
+    background: transparent;
+    margin-bottom: 24px;
 }

@@ -1,5 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
 @import './app/partials/variables';
+@import './app/partials/mixins';
+@import './app/partials/functions';
 
 * {
     margin: 0;
@@ -7,4 +9,8 @@
     list-style: none;
     box-sizing: border-box;
     font-family: $fontOut;
+}
+
+body {
+    background: $dark-blue;
 }

@@ -11,5 +11,9 @@ $fontOut: "Outfit", sans-serif;
 
 // Border variables
 $border-empty : 1px solid $greyish-blue;
-$border-active : 1px solid $pure-white;
+$border-active : 2px solid $pure-white;
 $border-error : 1px solid $red;
+
+// Button transition variables
+$btn-transition: .2s ease-in-out;
+$input-transition: .1s ease-in-out;

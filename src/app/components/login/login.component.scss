@@ -1,0 +1,57 @@
+@import '../../partials/functions';
+@import '../../partials/variables';
+@import '../../partials/mixins';
+
+form {
+    width: 400px;
+    height: 373px;
+    border-radius: 20px;
+    background: $semi-dark-blue;
+    padding: 32px;
+
+    display: flex;
+    flex-direction: column;
+
+    span.form-title {
+        @include HeadingL;
+        margin-bottom: 40px;
+    }
+
+    input.email {
+        @include InputEmpty;
+    }
+    input.email:focus {
+        @include InputActive;
+    }
+    
+    input.password {
+        @include InputEmpty;
+        margin-bottom: 40px;
+    }
+    input.password:focus {
+        @include InputActive;
+        margin-bottom: 40px;
+
+    }
+    
+    
+
+    button.login-btn {
+        @include ButtonIdle;
+    }
+    button.login-btn:hover {
+        @include ButtonHover;
+    }
+
+    span.no-account-extention-point {
+        @include BodyM;
+        width: 100%;
+        text-align: center;
+
+        a {
+            text-decoration: none;
+            color: $red;
+        }
+        
+    }
+}
