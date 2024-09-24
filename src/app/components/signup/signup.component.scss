@@ -65,6 +65,28 @@ form {
             color: $red;
         }
     }
+
+    div.re-password-box {
+        position: relative;
+
+        input.re-password {
+            @include InputEmpty;
+            margin-bottom: 40px;
+        }
+        input.re-password:focus {
+            @include InputActive;
+            margin-bottom: 40px;
+        }
+
+        div.error {
+            position: absolute;
+            z-index: 2;
+            top: 0;
+            right: 16px;
+            @include BodyS;
+            color: $red;
+        }
+    }
     
 
     button.login-btn {
