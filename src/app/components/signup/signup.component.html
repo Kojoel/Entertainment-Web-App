@@ -1,4 +1,7 @@
-This is where you sign up
+<div class="logo">
+    <svg width="33" height="27" xmlns="http://www.w3.org/2000/svg"><path d="m26.463.408 3.2 6.4h-4.8l-3.2-6.4h-3.2l3.2 6.4h-4.8l-3.2-6.4h-3.2l3.2 6.4h-4.8l-3.2-6.4h-1.6a3.186 3.186 0 0 0-3.184 3.2l-.016 19.2a3.2 3.2 0 0 0 3.2 3.2h25.6a3.2 3.2 0 0 0 3.2-3.2V.408h-6.4Z" fill="#FC4747"/></svg>
+</div>
+
 <div class="form-container">
     <form [formGroup]="signupForm">
         <span class="form-title">Sign Up</span>
@@ -22,7 +25,7 @@ This is where you sign up
             </div>
         </div>
     
-        <button class="login-btn">Create an account</button>
+        <button class="login-btn"(click)="goToLogIn()">Create an account</button>
         <span class="no-account-extention-point">Already have an account? <span (click)="goToLogIn()">Login</span></span>
     </form>
 </div>

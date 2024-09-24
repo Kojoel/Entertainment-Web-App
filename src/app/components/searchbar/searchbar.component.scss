@@ -1,0 +1,28 @@
+@import '../../partials/variables';
+@import '../../partials/mixins';
+
+div.searh-container {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+
+    svg {
+
+    }
+
+    input.search-input {
+        @include InputEmpty;
+        width: 100%;
+        padding: 0;
+        margin-bottom: 0;
+        border-bottom: none;
+        margin-right: 36px;
+    }
+    input.search-input:focus {
+        @include InputEmpty;
+        width: 100%;
+        padding: 0;
+        margin-bottom: 0;
+        margin-right: 36px;
+    }
+}
