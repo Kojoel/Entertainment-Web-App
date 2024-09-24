@@ -8,5 +8,11 @@ import { Component } from '@angular/core';
   styleUrl: './sidebar.component.scss'
 })
 export class SidebarComponent {
+  selected: boolean = false;
 
+  constructor() {}
+
+  toggleNavStyle() {
+    this.selected = !this.selected;
+  }
 }

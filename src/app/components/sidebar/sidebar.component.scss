@@ -1,0 +1,51 @@
+@import '../../partials/variables';
+@import '../../partials/mixins';
+
+aside.sidebar-container {
+    height: 100vh;
+    width: 96px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    background: $semi-dark-blue;
+    border-radius: 20px;
+    padding: 35.41px 0;
+    margin: 32px 36px 32px 32px;
+
+    div.nav-wrapper {
+
+        svg.logo {
+            margin-bottom: 74.99px;
+        }
+
+        div.nav-icons {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 40px;
+        }
+    }
+
+    img.user-profile {
+        width: 40px;
+        height: 40px;
+        border: 1px solid $pure-white;
+        border-radius: 50%;
+    }
+}
+
+
+.selected {
+    path {
+        fill: $pure-white;
+        cursor: pointer;
+    }
+}
+
+.not-selected {
+    path {
+        fill: $greyish-blue;
+        cursor: pointer;
+    }
+}

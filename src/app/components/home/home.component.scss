@@ -1,0 +1,14 @@
+div.container {
+    display: flex;
+
+    app-sidebar {
+        
+    }
+
+    div.right-side {
+        flex: 1;
+
+        app-searchbar{
+        }
+    }
+}

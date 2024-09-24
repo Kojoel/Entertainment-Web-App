@@ -109,3 +109,31 @@
     background: transparent;
     margin-bottom: 24px;
 }
+
+@mixin SearchInputEmpty() {
+    @include HeadingM;
+    width: 336px;
+    height: 37px;
+    outline: none;
+    border: none;
+    border-bottom: 1px solid transparent;
+    padding: 5px 16px 32px 16px;
+    caret-color: $red;
+    background: transparent;
+    margin-bottom: 24px;
+    transition: $input-transition;
+}
+
+@mixin SearchInputActive() {
+    @include HeadingM;
+    width: 336px;
+    height: 37px;
+    outline: none;
+    border: none;
+    border-bottom: $border-empty;
+    padding: 5px 16px 32px 16px;
+    caret-color: $red;
+    background: transparent;
+    margin-bottom: 24px;
+    transition: $input-transition;
+}
