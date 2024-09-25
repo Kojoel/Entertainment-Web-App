@@ -1,0 +1,84 @@
+@import '../../partials/mixins';
+@import '../../partials/variables';
+
+div.trending-container {
+
+    span.heading {
+        @include HeadingL;
+    }
+
+    div.trending-movie-wrapper {
+        display: flex;
+        gap: 40px;
+        padding-top: 25px;
+        // background: yellow;
+        position: relative;
+        overflow-x: scroll;
+
+        div.trending-item {  
+            
+
+            img {
+                width: 470px;
+                height: 230px;
+                border-radius: 8px;
+                object-fit: cover;
+            }
+    
+            div.image-data {
+                position: absolute;
+                display: flex;
+                flex-direction: column;
+                top: 25px;
+    
+                div.bookmark-wrapper {
+                    width: 470px;
+                    display: flex;
+                    justify-content: right;
+                    padding-top: 16px;
+                    padding-right: 24px;
+                    margin-bottom: 106px;
+                    
+                    div.bm-wrapper-wrapper {
+                        width: 32px ;
+                        height: 32px;
+                        border-radius: 50%;
+                        background: $dark-blue-transparency;
+                        display: grid;
+                        place-items: center;
+                    }
+                }
+    
+                div.movie-rating {
+                    div.info {
+                        @include BodyM;
+                        display: flex;
+                        align-items: center;
+                        gap: 5px;
+                        padding-left: 24px;
+                        opacity: .8;
+    
+                        div.dot {
+                            @include dot;
+                        }
+    
+                        svg.info-movie-svg {
+                            scale: .7;
+    
+                            path {
+                                fill: $pure-white;
+                                opacity: .5;
+                            }
+                        }
+                    }
+                    span.movie-name {
+                        @include HeadingS;
+                        padding-left: 24px;
+                        font-weight: 500;
+                    }
+                }
+            }
+
+        }
+    }
+}

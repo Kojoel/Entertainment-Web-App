@@ -2,13 +2,20 @@ div.container {
     display: flex;
 
     app-sidebar {
-        
+
     }
 
     div.right-side {
-        flex: 1;
+        display: flex;
+        flex-direction: column;
+        overflow: scroll;
 
         app-searchbar{
+
+        }
+
+        app-trending {
+            
         }
     }
 }
