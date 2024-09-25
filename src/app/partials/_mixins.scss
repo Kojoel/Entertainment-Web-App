@@ -68,6 +68,41 @@
     transition: $btn-transition;
 }
 
+@mixin PlayButton() {
+    @include HeadingXS;
+    width: 117px;
+    height: 48px;
+    border-radius: 28.5px;
+    padding: 0 9px;
+    background: $pure-white-transparent;
+    display: flex;
+    align-items: center;
+    gap: 19px;
+    cursor: pointer;
+}
+
+@mixin PlayButtonHovered() {
+    svg {
+        path {
+            fill: $pure-white;
+        }
+    }
+    span {
+        color: $pure-white;
+    }
+}
+
+@mixin PlayButtonIdle() {
+    svg {
+        path {
+            fill: transparent;
+        }
+    }
+    span {
+        color: transparent;
+    }
+}
+
 //Inputs-form
 @mixin InputEmpty() {
     @include BodyM;
