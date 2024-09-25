@@ -17,6 +17,7 @@ div.recommended-container {
         div.fyp-wrapper {
             width: 280px;
             height: 226px;
+            // background: yellow;
 
             div.recommended-item {
                 position: relative;
@@ -115,5 +116,20 @@ div.recommended-container {
                 }
             }
         }
+    }
+}
+
+
+
+// Media Query 
+@media screen and (max-width: 430px) {
+    .fyp-wrapper {
+        width: 164px;
+        height: 110px;
+    }
+
+    img.image {
+        width: 164px;
+        height: 110px;
     }
 }
