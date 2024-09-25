@@ -1,0 +1,119 @@
+@import '../../partials/mixins';
+@import '../../partials/variables';
+
+div.recommended-container {
+    margin-bottom: 40px;
+
+    span.heading {
+        @include HeadingL;
+    }
+
+    div.fyp-list {
+        display: flex;
+        gap: 40px;
+        flex-wrap: wrap;
+        margin-top: 32px;
+
+        div.fyp-wrapper {
+            width: 280px;
+            height: 226px;
+
+            div.recommended-item {
+                position: relative;
+
+                img.image {
+                    width: 280px;
+                    height: 174px;
+                    object-fit: cover;
+                    border-radius: 8px;
+                    margin-bottom: 8px;
+                }
+
+                div.bookmark-wrapper {
+                    width: 32px;
+                    height: 32px;
+                    border-radius: 50%;
+                    background: $dark-blue-transparency;
+                    position: absolute;
+                    z-index: 4;
+                    top: 16px;
+                    right: 16px;
+                    display: grid;
+                    place-items: center;
+
+                    svg.bookmark-stroke {
+
+                    }
+
+                    svg.bookmark-fill {
+                        display: none;
+                    }
+                }
+
+                div.dark-bg {
+                    width: 280px;
+                    height: 174px;
+                    background: transparent;
+                    position: absolute;
+                    top: 0;
+                    display: grid;
+                    place-items: center;
+                    transition: $btn-transition;
+                    cursor: pointer;
+
+                    div.play-btn {
+                        @include PlayButtonIdle;
+                        transition: $btn-transition;
+                    }
+                }
+
+                div.dark-bg:hover {
+                    width: 280px;
+                    height: 174px;
+                    background: $dark-blue-transparency;
+                    position: absolute;
+                    top: 0;
+                    display: grid;
+                    place-items: center;
+
+                    div.play-btn {
+                        @include PlayButton;
+                        @include PlayButtonHovered;
+                    }
+                }
+
+            }
+
+            div.fyp-info {
+                
+                div.fyp-rating {
+                    display: flex;
+                    align-items: center;
+                    gap: 8px;
+                    opacity: .75;
+
+                    span {
+                        @include BodyS;
+                    }
+
+                    div.circle {
+                        @include dot;
+                    }
+
+                    svg {
+                        scale: .8;
+
+                        path {
+                            fill: $pure-white;
+                        }
+                    }
+                }
+
+                span.fyp-name {
+                    @include HeadingXS;
+                    font-weight: 300;
+                }
+            }
+        }
+    }
+}

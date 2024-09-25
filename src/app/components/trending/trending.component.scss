@@ -2,7 +2,7 @@
 @import '../../partials/variables';
 
 div.trending-container {
-    height: 100vh;
+    margin-bottom: 40px;
 
     span.heading {
         @include HeadingL;
