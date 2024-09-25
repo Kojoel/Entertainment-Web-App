@@ -14,8 +14,9 @@ div.logo{
 div.form-container {
     width: 100%;
     height: 100%;
-    display: grid;
-    place-items: center;
+    display: flex;
+    justify-content: center;
+    margin-top: 10rem;
 }
 
 form {
@@ -38,9 +39,11 @@ form {
         
         input.email {
             @include InputEmpty;
+            width: 100%;
         }
         input.email:focus {
             @include InputActive;
+            width: 100%;
         }
 
         div.error {
@@ -58,11 +61,13 @@ form {
 
         input.password {
             @include InputEmpty;
+            width: 100%;
             margin-bottom: 40px;
         }
         input.password:focus {
             @include InputActive;
             margin-bottom: 40px;
+            width: 100%;
         }
 
         div.error {
@@ -78,9 +83,11 @@ form {
 
     button.login-btn {
         @include ButtonIdle;
+        width: 100%;
     }
     button.login-btn:hover {
         @include ButtonHover;
+        width: 100%;
     }
 
     span.no-account-extention-point {
@@ -94,5 +101,14 @@ form {
             cursor: pointer;
         }
         
+    }
+}
+
+
+// Media Queries
+
+@media screen and (max-width: 430px) {
+    form {
+        width: 327px;
     }
 }
