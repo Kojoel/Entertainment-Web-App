@@ -5,3 +5,8 @@ import { Show } from "../models/media.model";
 export const loadShows = createAction('[Shows] Load Shows');
 export const loadShowsSuccess = createAction('[Shows] Load Shows Success', props<{ shows: Show[] }>());
 export const loadShowsFailure = createAction('[Shows] Load Shows Failure', props<{ error: any }>());
+
+export const toggleBookmark = createAction(
+    '[Shows] Toggle Bookmark',
+    props<{ id: number }>()
+);

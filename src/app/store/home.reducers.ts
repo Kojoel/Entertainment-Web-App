@@ -4,14 +4,12 @@ import * as ShowActions from '../store/home.actions';
 
 export interface ShowState {
     allshows: Show[];
-    filteredShows: Show[];
     loading: boolean;
     error: any;
 }
   
 export const initialState: ShowState = {
     allshows: [],
-    filteredShows: [],
     loading: false,
     error: null
 };
@@ -23,7 +21,7 @@ export const showReducer = createReducer(
     on(ShowActions.loadShowsSuccess, (state, { shows }) => ({
       ...state,
       allshows: shows,
-      filteredShows: shows,
+    //   filteredShows: shows,
       loading: false
     })),
     on(ShowActions.loadShowsFailure, (state, { error }) => ({

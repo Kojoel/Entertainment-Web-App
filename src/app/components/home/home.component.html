@@ -1,8 +1,8 @@
 <div class="container">
     <app-sidebar></app-sidebar>
     <div class="right-side">
-        <app-searchbar></app-searchbar>
+        <app-searchbar placeholder="Search for movies or TV series"></app-searchbar>
         <app-trending></app-trending>
-        <app-recommended></app-recommended>
+        <app-recommended [shows]="allshows$"></app-recommended>
     </div>
 </div>

@@ -8,7 +8,12 @@ export const selectAllShows = createSelector(
   (state: ShowState) => state.allshows
 );
 
-export const selectFilteredShows = createSelector(
+export const selectMovies = createSelector(
   selectShowState,
-  (state: ShowState) => state.filteredShows
+  (state: ShowState) => state.allshows.filter((item) => item.category === 'Movie')
+);
+
+export const selectTVSeries = createSelector(
+  selectShowState,
+  (state: ShowState) => state.allshows.filter((item) => item.category === 'TV Series')
 );

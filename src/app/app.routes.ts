@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { MoviesComponent } from './components/movies/movies.component';
 import { TvseriesComponent } from './components/tvseries/tvseries.component';
+import { BookmarksComponent } from './components/bookmarks/bookmarks.component';
 
 export const routes: Routes = [
     { path:'', component: LoginComponent },
@@ -12,6 +13,6 @@ export const routes: Routes = [
     { path:'home', component: HomeComponent },
     { path:'movies', component: MoviesComponent},
     { path:'tvseries', component: TvseriesComponent },
-    // { path: 'bookmarks', component: },
+    { path: 'bookmarks', component: BookmarksComponent},
     { path: '**', redirectTo: '' }
 ];

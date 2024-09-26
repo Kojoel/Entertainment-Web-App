@@ -1,0 +1,38 @@
+div.container {
+    display: flex;
+    margin: 32px;
+
+    app-sidebar {
+
+    }
+
+    div.right-side {
+        display: flex;
+        flex-direction: column;
+        overflow: scroll;
+
+        app-searchbar{
+            width: 100vw;
+        }
+
+        app-trending {
+            
+        }
+    }
+}
+
+// Media Queries 
+
+@media screen and (max-width: 768px) {
+    div.container {
+        display: block;
+        margin: 25px;
+    }
+}
+
+@media screen and (max-width: 375px) {
+    div.container {
+        display: block;
+        // margin: 25px; 
+    }
+}

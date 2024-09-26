@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Show } from '../../models/media.model';
@@ -14,6 +14,10 @@ import { loadShows } from '../../store/home.actions';
   styleUrl: './recommended.component.scss'
 })
 export class RecommendedComponent {
+  
+  @Input() shows!: Observable<Show[]>;
+  @Input() title: string = 'Recommended for you';
+
   allShows$: Observable<Show[]>;
   allShows = selectAllShows;
 
@@ -25,6 +29,6 @@ export class RecommendedComponent {
 
   ngOnInit() {
     this.store.dispatch(loadShows());
-    this.allShows$.subscribe(item => console.log("REcommendation: ", item))
+    // this.allShows$.subscribe(item => console.log("REcommendation: ", item))
   }
 }

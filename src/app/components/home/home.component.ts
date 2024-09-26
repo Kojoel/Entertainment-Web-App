@@ -7,6 +7,7 @@ import { ApiService } from '../../services/api.service';
 import { Observable } from 'rxjs';
 import { Show } from '../../models/media.model';
 import { Store } from '@ngrx/store';
+import { selectAllShows } from '../../store/home.selectors';
 
 @Component({
   selector: 'app-home',
@@ -17,13 +18,16 @@ import { Store } from '@ngrx/store';
 })
 export class HomeComponent {
 
+  allshows$!: Observable<Show[]>;
+
   constructor(
-    private dataService: ApiService,
+    public store: Store,
   ) {
-    
+    this.allshows$ = this.store.select(selectAllShows);
   }
 
   ngOnInit() {
-    // this.dataService.getMediaData().subscribe(item => console.log(item));
+    this.allshows$.subscribe(item => console.log("selectallshows: ", item));
   }
+
 }

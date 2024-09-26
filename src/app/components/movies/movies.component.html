@@ -1,7 +1,7 @@
 <div class="container">
     <app-sidebar></app-sidebar>
     <div class="right-side">
-        <app-searchbar></app-searchbar>
-        <app-recommended></app-recommended>
+        <app-searchbar placeholder="Search for movies"></app-searchbar>
+        <app-recommended [shows]="movies$" title="Movies"></app-recommended>
     </div>
 </div>
