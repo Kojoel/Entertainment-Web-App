@@ -10,11 +10,19 @@ export class RouteService {
     public router: Router
   ) { }
 
-  goToCategories() {
-    this.router.navigate()
+  goToHome() {
+    this.router.navigate(['/home'])
   }
 
   goToMovies() {
     this.router.navigate(['/movies'])
+  }
+
+  goToSeries() {
+    this.router.navigate(['tvseries'])
+  }
+
+  goToBookmarks() {
+    this.router.navigate(['bookmarks'])
   }
 }
