@@ -1,12 +1,30 @@
 import { Component } from '@angular/core';
+import { Store } from '@ngrx/store';
+import { Observable } from 'rxjs';
+import { Show } from '../../models/media.model';
+import { selectAllShows } from '../../store/home.selectors';
+import { loadShows } from '../../store/home.actions';
+import { AsyncPipe } from '@angular/common';
 
 @Component({
   selector: 'app-trending',
   standalone: true,
-  imports: [],
+  imports: [AsyncPipe],
   templateUrl: './trending.component.html',
   styleUrl: './trending.component.scss'
 })
 export class TrendingComponent {
+
+  recommendedShows$: Observable<Show[]>;
+
+  constructor(
+    private store: Store,
+  ) {
+    this.recommendedShows$ = this.store.select(selectAllShows);
+  }
+
+  ngOnInit() {
+    this.store.dispatch(loadShows());
+  }
 
 }

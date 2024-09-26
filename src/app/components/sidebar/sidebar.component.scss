@@ -25,6 +25,12 @@ aside.sidebar-container {
             align-items: center;
             gap: 40px;
         }
+        div.nav-icons svg:hover {
+            path {
+                fill: $red;
+                cursor:pointer;
+            }
+        }
     }
 
     img.user-profile {
