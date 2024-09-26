@@ -15,9 +15,10 @@ import { loadShows } from '../../store/home.actions';
 })
 export class RecommendedComponent {
   allShows$: Observable<Show[]>;
+  allShows = selectAllShows;
 
   constructor(
-    private store: Store,
+    public store: Store,
   ) {
     this.allShows$ = this.store.select(selectAllShows);
   }

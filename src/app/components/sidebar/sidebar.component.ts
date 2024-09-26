@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { RouteService } from '../../services/route.service';
 
 @Component({
   selector: 'app-sidebar',
@@ -10,7 +11,9 @@ import { Component } from '@angular/core';
 export class SidebarComponent {
   selected: boolean = false;
 
-  constructor() {}
+  constructor(
+    public routerService: RouteService
+  ) {}
 
   toggleNavStyle() {
     this.selected = !this.selected;

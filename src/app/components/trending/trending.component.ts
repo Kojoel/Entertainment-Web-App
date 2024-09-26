@@ -16,15 +16,17 @@ import { AsyncPipe } from '@angular/common';
 export class TrendingComponent {
 
   recommendedShows$: Observable<Show[]>;
+  allShows = selectAllShows;
 
   constructor(
-    private store: Store,
+    public store: Store,
   ) {
     this.recommendedShows$ = this.store.select(selectAllShows);
   }
 
   ngOnInit() {
     this.store.dispatch(loadShows());
+    // this.recommendedShows$.subscribe(item => console.log("Recommended: ", item))
   }
 
 }
