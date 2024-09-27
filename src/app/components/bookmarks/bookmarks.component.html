@@ -2,6 +2,7 @@
     <app-sidebar></app-sidebar>
     <div class="right-side">
         <app-searchbar placeholder="Search for bookmarked shows"></app-searchbar>
-        <app-recommended [shows]="bookmarked$" title="Bookmarked Movies"></app-recommended>
+        <app-recommended [shows]="bookmarkedMovies$" title="Bookmarked Movies"></app-recommended>
+        <app-recommended [shows]="bookmarkedSeries$" title="Bookmarked TV Series"></app-recommended>
     </div>
 </div>

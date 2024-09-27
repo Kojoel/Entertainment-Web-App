@@ -54,6 +54,18 @@ div.trending-container {
                         background: $dark-blue-transparency;
                         display: grid;
                         place-items: center;
+                        transition: $dark-blue-transparency;
+                    }
+
+                    div.bm-wrapper-wrapper:hover {
+                        background: $pure-white;
+
+                        svg {
+                            path {
+                                stroke: $dark-blue;
+                                stroke-width: 2px;
+                            }
+                        }
                     }
                 }
     

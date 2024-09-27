@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { SearchbarComponent } from '../searchbar/searchbar.component';
 import { SidebarComponent } from '../sidebar/sidebar.component';
 import { RecommendedComponent } from '../recommended/recommended.component';
-import { selectBookmarkedShows } from '../../store/home.selectors';
+import { selectBookmarkedMovies, selectBookmarkedSeries, selectBookmarkedShows } from '../../store/home.selectors';
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Show } from '../../models/media.model';
@@ -15,16 +15,19 @@ import { Show } from '../../models/media.model';
   styleUrl: './bookmarks.component.scss'
 })
 export class BookmarksComponent {
-  bookmarked$!: Observable<Show[]>;
+  bookmarkedMovies$!: Observable<Show[]>;
+  bookmarkedSeries$!: Observable<Show[]>;
 
   constructor(
     public store: Store,
   ) {
-    this.bookmarked$ = this.store.select(selectBookmarkedShows);
+    this.bookmarkedMovies$ = this.store.select(selectBookmarkedMovies);
+    this.bookmarkedSeries$ = this.store.select(selectBookmarkedSeries);
   }
 
   ngOnInit() {
-    this.bookmarked$.subscribe(item => console.log("Bookmarked: ", item));
+    this.bookmarkedMovies$.subscribe(item => console.log("Bookmarked Movies: ", item));
+    this.bookmarkedSeries$.subscribe(item => console.log("Bookmarked Series: ", item));
   }
 
 }

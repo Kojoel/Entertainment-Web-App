@@ -41,6 +41,7 @@ div.recommended-container {
                     right: 16px;
                     display: grid;
                     place-items: center;
+                    transition: $btn-transition;
 
                     svg.bookmark-stroke {
 
@@ -49,6 +50,17 @@ div.recommended-container {
                     svg.bookmark-fill {
                         
                     }
+                }
+
+                div.bookmark-wrapper:hover {
+                        background: $pure-white;
+
+                        svg {
+                            path {
+                                stroke: $dark-blue;
+                                stroke-width: 2px;
+                            }
+                        }
                 }
 
                 div.dark-bg {

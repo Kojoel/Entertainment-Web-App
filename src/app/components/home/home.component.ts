@@ -27,7 +27,7 @@ export class HomeComponent {
   }
 
   ngOnInit() {
-    this.allshows$.subscribe(item => console.log("selectallshows: ", item));
+
   }
 
 }

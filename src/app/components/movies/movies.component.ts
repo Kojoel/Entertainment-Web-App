@@ -25,7 +25,7 @@ export class MoviesComponent {
   }
 
   ngOnInit() {
-    this.movies$.subscribe(item => console.log("Movies: ", item));
+    
   }
 
     
