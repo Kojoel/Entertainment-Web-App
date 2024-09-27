@@ -18,7 +18,7 @@ export const initialState: ShowState = {
 export const showReducer = createReducer(
     initialState,
     on(ShowActions.loadShows, state => ({ ...state, loading: true })),
-    on(ShowActions.loadShowsSuccess, (state, { shows }) => ({
+    on(ShowActions.loadShowsSuccess, (state, { shows }) => ( console.log("Shows in reducer: ", shows),{
       ...state,
       allshows: shows,
     //   filteredShows: shows,
