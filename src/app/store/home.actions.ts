@@ -8,5 +8,5 @@ export const loadShowsFailure = createAction('[Shows] Load Shows Failure', props
 
 export const toggleBookmark = createAction(
     '[Shows] Toggle Bookmark',
-    props<{ id: number }>()
+    props<{ title: string }>()
 );

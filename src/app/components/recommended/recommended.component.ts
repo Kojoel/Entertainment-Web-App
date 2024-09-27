@@ -4,7 +4,7 @@ import { Observable } from 'rxjs';
 import { Show } from '../../models/media.model';
 import { selectAllShows } from '../../store/home.selectors';
 import { AsyncPipe } from '@angular/common';
-import { loadShows } from '../../store/home.actions';
+import { loadShows, toggleBookmark } from '../../store/home.actions';
 
 @Component({
   selector: 'app-recommended',
@@ -30,5 +30,9 @@ export class RecommendedComponent {
   ngOnInit() {
     this.store.dispatch(loadShows());
     // this.allShows$.subscribe(item => console.log("REcommendation: ", item))
+  }
+
+  toggleBookmark(title: string) {
+    this.store.dispatch(toggleBookmark({title}));
   }
 }

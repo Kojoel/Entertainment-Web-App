@@ -29,4 +29,14 @@ export const showReducer = createReducer(
         error,
         loading: false
     })),
+
+    on(ShowActions.toggleBookmark, (state, { title }) => ({
+      ...state,
+      shows: state.allshows.map(item => {
+        item.title === title? { ...item, isBookmarked: !item.isBookmarked } : item
+      }),
+      // shows: state.shows.map((item) =>
+      //   item.id === id ? { ...item, isBookmarked: !item.isBookmarked } : item
+      // ),
+    }))
   );

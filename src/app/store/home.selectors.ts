@@ -17,3 +17,8 @@ export const selectTVSeries = createSelector(
   selectShowState,
   (state: ShowState) => state.allshows.filter((item) => item.category === 'TV Series')
 );
+
+export const selectBookmarkedShows = createSelector(
+  selectShowState,
+  (state: ShowState) => state.allshows.filter((item) => item.isBookmarked)
+);
