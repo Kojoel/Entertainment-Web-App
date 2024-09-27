@@ -34,7 +34,6 @@ export class RecommendedComponent {
 
   ngOnInit() {
     this.store.dispatch(loadShows());
-    // this.allShows$.subscribe(item => console.log("REcommendation: ", item))
   }
 
 }

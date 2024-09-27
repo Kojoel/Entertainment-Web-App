@@ -1,5 +1,13 @@
 <div class="recommended-container">
+  @if(search.userQuery.length <= 0) {
     <span class="heading">{{ title }}</span>
+  }
+  @else if(search.userQuery.length === 1) {
+    <span class="heading">Found {{ search.valueCount }} result for '{{ search.userQuery }}'</span>
+  }
+  @else if(search.userQuery.length > 1) {
+    <span class="heading">Found {{ search.valueCount }} results for '{{ search.userQuery }}'</span>
+  }
     <div class="fyp-list">
       @for(rec of (shows | async) | search: search.userQuery ; track rec) {
         @if(rec.thumbnail.regular) {

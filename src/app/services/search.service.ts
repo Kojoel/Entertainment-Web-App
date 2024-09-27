@@ -12,6 +12,7 @@ export class SearchService {
   ) { }
 
   userQuery: string = '';
+  valueCount: number = 0;
 
   setSearchQuery(query: string) {
     this.store.dispatch(setSearchQuery({query}))
