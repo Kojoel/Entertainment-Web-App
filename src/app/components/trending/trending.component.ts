@@ -6,6 +6,7 @@ import { selectAllShows } from '../../store/home.selectors';
 import { loadShows } from '../../store/home.actions';
 import { AsyncPipe } from '@angular/common';
 import { BookmarksService } from '../../services/bookmarks.service';
+import { SearchService } from '../../services/search.service';
 
 @Component({
   selector: 'app-trending',
@@ -22,6 +23,7 @@ export class TrendingComponent {
   constructor(
     public store: Store,
     public bookmarkService: BookmarksService,
+    public search: SearchService,
   ) {
     this.recommendedShows$ = this.store.select(selectAllShows);
   }
