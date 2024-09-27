@@ -1,7 +1,7 @@
 <div class="recommended-container">
     <span class="heading">{{ title }}</span>
     <div class="fyp-list">
-      @for(rec of (shows | async); track rec) {
+      @for(rec of (shows | async) | search: search.userQuery ; track rec) {
         @if(rec.thumbnail.regular) {
           <div class="fyp-wrapper">
             <div class="recommended-item">

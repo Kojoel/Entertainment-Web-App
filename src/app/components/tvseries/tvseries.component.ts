@@ -24,7 +24,7 @@ export class TvseriesComponent {
   }
 
   ngOnInit() {
-    this.tvseries$.subscribe(item => console.log("series: ", item));
+
   }
 
 }

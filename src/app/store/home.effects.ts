@@ -1,39 +1,6 @@
-// // invoice.effects.ts
-// import { Injectable } from '@angular/core';
-// import { Actions, createEffect, ofType } from '@ngrx/effects';
-// import { catchError, map, mergeMap } from 'rxjs/operators';
-// import { of } from 'rxjs';
-// import { ApiService } from '../services/api.service';
-// import * as ShowActions from '../store/home.actions';
-
-// @Injectable()
-// export class ShowEffects {
-//     constructor(
-//         private actions$: Actions,
-//         private apiService: ApiService
-//     ) {}
-  
-//     // Effect to load shows
-//     loadShows$ = createEffect(() =>
-//         this.actions$.pipe(
-//         ofType(ShowActions.loadShows),
-//         mergeMap(() =>
-//             this.apiService.getMediaData().pipe(  // Assuming you have a method getShows() in ApiService
-//             map((shows: any) => {
-//                 return ShowActions.loadShowsSuccess({ shows })
-//             },
-//             catchError((error) => of(ShowActions.loadShowsFailure({ error })))
-//             )
-//             )
-//         )
-//         )
-//     );
-// }
-
-
 import { Injectable } from '@angular/core';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
-import { catchError, map, mergeMap, switchMap, tap, withLatestFrom } from 'rxjs/operators';
+import { catchError, debounceTime, map, mergeMap, switchMap, tap, withLatestFrom } from 'rxjs/operators';
 import { of, from } from 'rxjs';
 import { ApiService } from '../services/api.service';
 import * as ShowActions from '../store/home.actions';
@@ -72,31 +39,8 @@ export class ShowEffects {
             catchError((error) => of(ShowActions.loadShowsFailure({ error })))
         )
     );
-
-    // Effect to update local storage when shows are modified
-    // updateLocalStorage$ = createEffect(() =>
-    //     this.actions$.pipe(
-    //         ofType(
-    //             ShowActions.loadShowsSuccess,
-    //             ShowActions.toggleBookmark
-    //         ),
-    //         switchMap(() => from(this.getUpdatedShows())),
-    //         tap((shows) => {
-    //             localStorage.setItem(this.STORAGE_KEY, JSON.stringify(shows));
-    //         })
-    //     ),
-    //     { dispatch: false }
-    // );
-
-    // private getUpdatedShows() {
-    //     return new Promise<any[]>((resolve) => {
-    //         const subscription = this.apiService.getMediaData().subscribe((shows) => {
-    //             resolve(shows);
-    //             subscription.unsubscribe();
-    //         });
-    //     });
-    // }
-
+        
+    // Effect to udpate local storage 
     updateLocalStorage$ = createEffect(() =>
         this.actions$.pipe(
             ofType(
@@ -110,4 +54,19 @@ export class ShowEffects {
         ),
         { dispatch: false }
     );
+
+
+//     searchShows$ = createEffect(() =>
+//     this.actions$.pipe(
+//       ofType(ShowActions.searchShow),
+//       debounceTime(300),
+//       switchMap(({ query }) =>
+//         this.apiService.getMediaData(query).pipe(
+//           map(results => ShowActions.searchShowSuccess({ results })),
+//           catchError(error => of(ShowActions.searchShowFailure({ error })))
+//         )
+//       )
+//     )
+//   );
+
 }

@@ -26,8 +26,7 @@ export class BookmarksComponent {
   }
 
   ngOnInit() {
-    this.bookmarkedMovies$.subscribe(item => console.log("Bookmarked Movies: ", item));
-    this.bookmarkedSeries$.subscribe(item => console.log("Bookmarked Series: ", item));
+    
   }
 
 }
