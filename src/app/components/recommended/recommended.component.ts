@@ -28,6 +28,7 @@ export class RecommendedComponent {
     public store: Store,
     public bookmarkService: BookmarksService,
     public search: SearchService,
+    public searchPipe: SearchPipe,
   ) {
     this.allShows$ = this.store.select(selectAllShows);
   }
@@ -36,5 +37,9 @@ export class RecommendedComponent {
     this.store.dispatch(loadShows());
     // this.allShows$.subscribe(item => console.log("REcommendation: ", item))
   }
+
+  // getShowlength(number_of_shows: number) {
+  //   this.showLength = number_of_shows;
+  // }
 
 }
