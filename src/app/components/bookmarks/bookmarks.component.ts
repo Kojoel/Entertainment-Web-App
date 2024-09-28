@@ -6,6 +6,7 @@ import { selectBookmarkedMovies, selectBookmarkedSeries, selectBookmarkedShows }
 import { Store } from '@ngrx/store';
 import { Observable } from 'rxjs';
 import { Show } from '../../models/media.model';
+import { SearchService } from '../../services/search.service';
 
 @Component({
   selector: 'app-bookmarks',
@@ -20,13 +21,13 @@ export class BookmarksComponent {
 
   constructor(
     public store: Store,
+    public search: SearchService,
   ) {
     this.bookmarkedMovies$ = this.store.select(selectBookmarkedMovies);
     this.bookmarkedSeries$ = this.store.select(selectBookmarkedSeries);
   }
 
   ngOnInit() {
-    
   }
 
 }

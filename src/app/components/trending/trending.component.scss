@@ -118,6 +118,7 @@ div.trending-container {
                         position: absolute;
                         z-index: 2;
                         top: 126px;
+                        width: 250px;
     
                         div.dot {
                             @include dot;
@@ -131,6 +132,7 @@ div.trending-container {
                                 opacity: .5;
                             }
                         }
+                        
                     }
                     span.movie-name {
                         @include HeadingS;
