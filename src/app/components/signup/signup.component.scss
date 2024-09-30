@@ -102,6 +102,12 @@ form {
             color: $red;
         }
     }
+
+    .error-message{
+        color: $red;
+        padding: 16px;
+        transition: .2s ease;
+    }
     
 
     button.login-btn {

@@ -62,11 +62,11 @@ form {
         input.password {
             @include InputEmpty;
             width: 100%;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
         }
         input.password:focus {
             @include InputActive;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             width: 100%;
         }
 
@@ -78,6 +78,12 @@ form {
             @include BodyS;
             color: $red;
         }
+    }
+
+    span.cred-invalid {
+        color: $red;
+        padding: 16px;
+        transition: .1s ease;
     }
     
 

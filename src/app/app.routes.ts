@@ -15,4 +15,30 @@ export const routes: Routes = [
     { path:'tvseries', component: TvseriesComponent },
     { path: 'bookmarks', component: BookmarksComponent},
     { path: '**', redirectTo: '' }
+
+    // {
+    //     path: '', redirectTo: 'login', pathMatch:'full'
+    // },
+    // {
+    //     path: 'login',
+    //     component: LoginComponent
+    // },
+    // {
+    //     path: 'home',
+    //     component: HomeComponent,
+    //     children: [
+    //         {
+    //             path: 'movies',
+    //             component: MoviesComponent
+    //         },
+    //         {
+    //             path: 'tvseries',
+    //             component: TvseriesComponent
+    //         },
+    //         {
+    //             path: 'bookmarks',
+    //             component: BookmarksComponent
+    //         }
+    //     ]
+    // }
 ];

@@ -2,6 +2,7 @@ import { CommonModule, formatCurrency } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-login',
@@ -13,13 +14,15 @@ import { Router } from '@angular/router';
 export class LoginComponent {
 
   loginForm: FormGroup;
+  isFormSubmitted: boolean = false;
 
   constructor(
     private router: Router,
+    public api: ApiService,
   ) {
     this.loginForm = new FormGroup({
       email: new FormControl("", [Validators.required, Validators.email]),
-      password: new FormControl("", [Validators.required])
+      password: new FormControl("", [Validators.required, Validators.minLength(6)])
     })
   }
 
@@ -28,7 +31,21 @@ export class LoginComponent {
   }
 
   goToHome() {
-    this.router.navigate(['/home'])
+    if(this.isFormSubmitted) {
+      this.router.navigate(['/home'])
+    }
+  }
+
+  onSubmit() {
+    if(this.loginForm.value.email !== '' || this.loginForm.value.password !== '') {
+      this.api.onLogin(this.loginForm.value);
+    }
+
+    const isFormValid = this.api.checkFormSubmitted;
+
+    this.isFormSubmitted = isFormValid;
+    this.loginForm.markAllAsTouched();
+    this.goToHome()
   }
 
 }
