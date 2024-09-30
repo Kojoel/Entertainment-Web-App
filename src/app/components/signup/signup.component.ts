@@ -74,7 +74,7 @@ export class SignupComponent {
       this.api.onSignUp(signupFormCheck).subscribe({
         next: (response) => {
           if(response.message) {
-            console.log('signup successful: ', response)
+            // console.log('signup successful: ', response)
             this.successResponse = true;
             this.successMessage = response.message;
             this.goToLogIn()
@@ -83,15 +83,13 @@ export class SignupComponent {
         error: (error) => {
           this.errorResponse = true;
           if (error.status === 400) {
-          // console.log('User already exists ', error.error.message);
           this.errorMessage = error.error.message;
-          this.goToLogIn()
         } else if (error.status === 500) {
-          console.log('Server error: ', error.error.message); 
-          this.errorMessage = error.error;
+          // console.log('Server error: ', error.error.message); 
+          this.errorMessage = error.error.message;
         } else {
-          console.log('Signup failed: ', error.message);
-          this.errorMessage = error.error;
+          // console.log('Signup failed: ', error.message);
+          this.errorMessage = error.error.message;
         }
       },
       complete: () => {

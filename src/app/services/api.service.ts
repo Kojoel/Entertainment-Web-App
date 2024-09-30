@@ -33,7 +33,8 @@ export class ApiService {
           // console.log(res);
           this.checkFormSubmitted = true;
           this.loginSuccessResponse = res;
-          // console.log("Response message: ", this.loginSuccessResponse);
+          localStorage.setItem('login token', res.token)
+          console.log("Response message: ", this.loginSuccessResponse);
         }
       },
       error: (err: HttpErrorResponse) => {
