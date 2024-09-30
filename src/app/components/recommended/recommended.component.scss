@@ -110,6 +110,10 @@ div.recommended-container {
                         @include BodyS;
                     }
 
+                    p {
+                        @include BodyS;
+                    }
+
                     div.circle {
                         @include dot;
                     }
@@ -183,7 +187,33 @@ div.recommended-container {
     
                 }
 
+                div.fyp-info {
                 
+                    div.fyp-rating {
+         
+    
+                        span {
+ 
+                        }
+                        p {
+                            @include BodyS;
+                            // font-size: 11px;
+                        }
+    
+                        div.circle {
+      
+                        }
+    
+                        svg {
+                
+    
+                            path {
+        
+                            }
+                        }
+                    }
+    
+                }
                 
             }
         }
