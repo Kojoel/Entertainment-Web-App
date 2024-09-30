@@ -3,6 +3,8 @@
 
 div.trending-container {
     margin-bottom: 40px;
+    margin-top: 10px;
+    margin-left: 7.5rem;
 
     span.heading {
         @include HeadingL;
@@ -149,3 +151,12 @@ div.trending-container {
         }
     }
 }
+
+
+@media screen and (max-width: 768px) {
+    div.trending-container {
+        margin-top:3rem;
+        margin-left: 0;
+    }
+}
+

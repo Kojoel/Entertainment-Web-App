@@ -2,7 +2,7 @@
 @import '../../partials/mixins';
 
 aside.sidebar-container {
-    height: 100vh;
+    height: 92%;
     width: 96px;
     display: flex;
     flex-direction: column;
@@ -12,6 +12,9 @@ aside.sidebar-container {
     border-radius: 20px;
     padding: 35.41px 0;
     margin-right: 36px;
+    position: fixed;
+    z-index: 6;
+    top: 36px;
 
     div.nav-wrapper {
 
@@ -62,7 +65,7 @@ aside.sidebar-container {
 
 @media screen and (max-width: 768px) {
     aside.sidebar-container {
-        width: 100%;
+        width: 92%;
         height: 72px;
         flex-direction: row;
         padding: 0 24px;
@@ -70,6 +73,30 @@ aside.sidebar-container {
         div.nav-wrapper {
             display: flex;
             gap: 190px;
+            height: 72px; 
+            align-items: center;
+
+            svg.logo {
+                margin-bottom: 0;
+            }
+    
+            div.nav-icons {
+                flex-direction: row;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 600px) {
+    aside.sidebar-container {
+        width: 92%;
+        height: 72px;
+        flex-direction: row;
+        padding: 0 24px;
+
+        div.nav-wrapper {
+            display: flex;
+            gap: 100px;
             height: 72px; 
             align-items: center;
 

@@ -3,6 +3,7 @@
 
 div.recommended-container {
     margin-bottom: 40px;
+    margin-left: 7.5rem;
 
     span.heading {
         @include HeadingL;
@@ -64,7 +65,7 @@ div.recommended-container {
                 }
 
                 div.dark-bg {
-                    width: 280px;
+                    width: 100%;
                     height: 174px;
                     background: transparent;
                     position: absolute;
@@ -81,7 +82,7 @@ div.recommended-container {
                 }
 
                 div.dark-bg:hover {
-                    width: 280px;
+                    width: 100%;
                     height: 174px;
                     background: $dark-blue-transparency;
                     position: absolute;
@@ -134,14 +135,154 @@ div.recommended-container {
 
 
 // Media Query 
-@media screen and (max-width: 430px) {
-    .fyp-wrapper {
-        width: 164px;
-        height: 110px;
-    }
+@media screen and (max-width: 768px) {
 
-    img.image {
-        width: 164px;
-        height: 110px;
+    div.recommended-container {
+        margin-left:0;
+
+        div.fyp-list {
+            display: flex;
+            gap: 25px;
+            flex-wrap: wrap;
+            margin-top: 32px;
+    
+            div.fyp-wrapper {
+                width: 220px;
+                height: 192px;
+                // background: yellow;
+    
+                div.recommended-item {
+                    position: relative;
+    
+                    img.image {
+                        width: 220px;
+                        height: 140px;
+                    }
+    
+                    div.bookmark-wrapper {
+                        width: 32px;
+                        height: 32px;
+                    }
+    
+                    div.bookmark-wrapper:hover {
+
+   
+                    }
+    
+                    div.dark-bg {
+                        width: 100%;
+                        height: 140px;
+    
+                    }
+    
+                    div.dark-bg:hover {
+                        width: 100%;
+                        height: 140px;
+    
+                    }
+    
+                }
+
+                
+                
+            }
+        }
     }
-}
+   
+} 
+
+@media screen and (max-width: 430px) {
+
+    div.recommended-container {
+        margin-left:0;
+
+        div.fyp-list {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+            margin-top: 32px;
+    
+            div.fyp-wrapper {
+                width: 164px;
+                height: 154px;
+                margin-bottom: 20px;
+                // background: yellow;
+    
+                div.recommended-item {
+                    position: relative;
+    
+                    img.image {
+                        width: 164px;
+                        height: 110px;
+                    }
+    
+                    div.bookmark-wrapper {
+                        width: 32px;
+                        height: 32px;
+                    }
+    
+                    div.bookmark-wrapper:hover {
+
+   
+                    }
+    
+                    div.dark-bg {
+                        width: 100%;
+                        height: 110px;
+    
+                    }
+    
+                    div.dark-bg:hover {
+                        width: 100%;
+                        height: 110px;
+    
+                    }
+    
+                }
+                
+            }
+
+            div.fyp-info {
+                
+                div.fyp-rating {
+                    display: flex;
+                    align-items: center;
+                    gap: 5px;
+                    opacity: .75;
+
+                    span {
+                        @include BodyS;
+                        font-size: 9px;
+                    }
+                    p {
+                        @include BodyS;
+                        font-size: 11px;
+                    }
+
+                    div.circle {
+                        @include dot;
+                    }
+
+                    svg {
+                        scale: .8;
+        
+
+                        path {
+                            scale: .8;
+                        }
+                    }
+                }
+
+                span.fyp-name {
+                    @include HeadingXS;
+                    font-size: px-to-rem(14);
+                    font-weight: 300;
+                }
+            }
+
+        }
+    }
+   
+} 
+
+
