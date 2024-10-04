@@ -13,7 +13,7 @@
             </div>
         </div>
         <div class="password-box">
-            <input type="text" class="password" placeholder="Password" formControlName="password" name="password">
+            <input type="password" class="password" placeholder="Password" formControlName="password" name="password">
             <div class="error" *ngIf="signupForm.controls['password'].invalid && (signupForm.controls['password'].touched || signupForm.controls['password'].dirty || isFormSubmitted)">
                 <span *ngIf="signupForm.controls['password'].errors?.['required']">Cant be empty</span>
                 <span *ngIf="signupForm.controls['password'].errors?.['minlength']">No less than 6 characters</span>
@@ -21,7 +21,7 @@
             </div>
         </div>
         <div class="re-password-box">
-            <input type="text" class="re-password" placeholder="Repeat Password" formControlName="rePassword" name="Confirm Password">
+            <input type="password" class="re-password" placeholder="Repeat Password" formControlName="rePassword" name="Confirm Password">
             <div class="error" *ngIf="signupForm.controls['rePassword'].invalid && (signupForm.controls['rePassword'].touched || signupForm.controls['rePassword'].dirty || isFormSubmitted)">
                 <span *ngIf="signupForm.controls['rePassword'].errors?.['required']">Cant be empty</span>
             </div>

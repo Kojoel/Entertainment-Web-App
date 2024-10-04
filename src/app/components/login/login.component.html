@@ -13,7 +13,7 @@
             </div>
         </div>
         <div class="password-box">
-            <input type="text" class="password" placeholder="Password" formControlName="password" name="password">
+            <input type="password" class="password" placeholder="Password" formControlName="password" name="password">
             <div class="error" *ngIf="loginForm.controls['password'].invalid && (loginForm.controls['password'].touched || loginForm.controls['password'].dirty)">
                 <span *ngIf="loginForm.controls['password'].errors?.['required']">Cant be empty</span>
                 <span *ngIf="loginForm.controls['password'].errors?.['minlength']">No less than 6 characters</span>
